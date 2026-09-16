@@ -1,0 +1,58 @@
+{
+  "version": 3,
+  "scope": "full",
+  "fps": 30,
+  "components": {
+    "ContinuousExample": "shots/ContinuousExample.tsx",
+    "KitShowcase": "shots/KitShowcase.tsx",
+    "ProductShowcase": "shots/ProductShowcase.tsx"
+  },
+  "style": {
+    "background": "#f4f3ef",
+    "layout": {},
+    "fontFamily": "\"Noto Sans CJK SC\",\"PingFang SC\",\"Microsoft YaHei\",sans-serif"
+  },
+  "voices": [],
+  "events": {
+    "hit": 0.3,
+    "number": 1.5,
+    "card": 3.0,
+    "sum": 4.4
+  },
+  "shots": [
+    {
+      "id": "example",
+      "component": "KitShowcase",
+      "start": 0,
+      "end": 10,
+      "viewerGain": "仅演示安全布局接口；正式作品需替换为真实素材和本选题专属镜头。",
+      "props": {
+        "template": true
+      },
+      "layouts": {
+        "3x4": {},
+        "9x16": {},
+        "16x9": {}
+      },
+      "assets": []
+    }
+  ],
+  "audio": [],
+  "assets": {},
+  "globalAssets": [],
+  "captions": {
+    "enabled": true,
+    "maxChars": 18,
+    "layouts": {
+      "3x4": {
+        "fontSize": 48
+      },
+      "9x16": {
+        "fontSize": 52
+      },
+      "16x9": {
+        "fontSize": 44
+      }
+    }
+  }
+}

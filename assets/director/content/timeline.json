@@ -1,0 +1,86 @@
+{
+  "version": 3,
+  "scope": "full",
+  "draft": true,
+  "fps": 30,
+  "durationFrames": 300,
+  "formats": {
+    "3x4": {
+      "width": 1080,
+      "height": 1440
+    },
+    "9x16": {
+      "width": 1080,
+      "height": 1920
+    },
+    "16x9": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "primaryFormat": "3x4",
+  "events": {
+    "hit": 9,
+    "number": 45,
+    "card": 90,
+    "sum": 132
+  },
+  "shots": [
+    {
+      "id": "example",
+      "component": "KitShowcase",
+      "start": 0,
+      "end": 300,
+      "viewerGain": "impact 预设参考：砸字、计数器、印章、推文卡、分步结论、收尾提问，每 ≤1.5 s 一个可见变化；正式作品按素材重新设计。",
+      "props": {},
+      "layouts": {
+        "3x4": {
+          "titleY": 0.16
+        },
+        "9x16": {
+          "titleY": 0.2
+        },
+        "16x9": {
+          "titleY": 0.18
+        }
+      },
+      "assets": [],
+      "from": 0,
+      "durationFrames": 300,
+      "transitionIn": {
+        "type": "cut",
+        "frames": 0
+      }
+    }
+  ],
+  "voices": [],
+  "audio": [],
+  "captions": [],
+  "captionStyle": {
+    "enabled": true,
+    "maxChars": 18,
+    "layouts": {
+      "3x4": {
+        "bottom": 100,
+        "fontSize": 48
+      },
+      "9x16": {
+        "bottom": 240,
+        "fontSize": 48
+      },
+      "16x9": {
+        "bottom": 80,
+        "fontSize": 44
+      }
+    }
+  },
+  "assets": {},
+  "globalAssets": [],
+  "style": {
+    "background": "#f4f3ef"
+  },
+  "voiceGaps": [],
+  "leadSilenceSeconds": 0,
+  "trailingSilenceSeconds": 10,
+  "inputHash": "a7a83d1d259c5dd1de42bed4af7ffda8d9caba20a63c8e925092ba161e020330"
+}

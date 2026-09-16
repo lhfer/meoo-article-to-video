@@ -1,0 +1,9 @@
+export type Rect={x:number;y:number;w:number;h:number};
+export type Format='3x4'|'9x16'|'16x9';
+export type LayoutOptions={insets?:Partial<{top:number;right:number;bottom:number;left:number}>;gap?:number;titleHeight?:number;captionFont?:number;subjectShare?:number};
+export type FrameLayout={format:Format;w:number;h:number;safe:Rect;title:Rect;content:Rect;caption:Rect;subject:Rect;side:Rect;min:{title:number;body:number;caption:number;note:number};gap:number;captionFont:number};
+export const FORMATS:Record<Format,{w:number;h:number}>;
+export const MIN_TEXT:Record<Format,FrameLayout['min']>;
+export function layoutFor(format:Format,options?:LayoutOptions):FrameLayout;
+export function contains(a:Rect,b:Rect,tolerance?:number):boolean;
+export function intersect(a:Rect,b:Rect):number;

@@ -1,0 +1,4 @@
+interface:
+  display_name: "证据驱动科技短视频导演"
+  short_description: "自主取材、统一布局、实际视听复查与可追溯交付"
+  default_prompt: "使用 $article-to-vertical-video 5.0.1，先读取实际技能与 Meoo 执行协议，验证工具能力，再按方案、脚本、真实样片确认节点制作视频。"

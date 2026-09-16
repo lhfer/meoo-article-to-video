@@ -1,0 +1,40 @@
+{
+  "name": "technology-video-director",
+  "version": "5.0.1",
+  "description": "Evidence-first video director with measured layouts and checked render receipts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lhfer/meoo-article-to-video.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@remotion/bundler": "4.0.520",
+    "@remotion/captions": "4.0.520",
+    "@remotion/cli": "4.0.520",
+    "@remotion/effects": "4.0.520",
+    "@remotion/fonts": "4.0.520",
+    "@remotion/mac-cursors": "4.0.520",
+    "@remotion/media": "4.0.520",
+    "@remotion/media-utils": "4.0.520",
+    "@remotion/motion-blur": "4.0.520",
+    "@remotion/renderer": "4.0.520",
+    "@remotion/rough-notation": "4.0.520",
+    "@remotion/transitions": "4.0.520",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.520"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "compile": "node core/build.mjs",
+    "compile:draft": "node core/build.mjs --draft",
+    "check": "tsc --noEmit",
+    "build": "remotion bundle"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "version": 4,
+  "profile": "viral",
+  "type": "news",
+  "audience": "对科技、AI感兴趣的普通用户",
+  "platforms": [
+    "xiaohongshu",
+    "douyin",
+    "bilibili",
+    "wechat-channels"
+  ],
+  "formats": [
+    "3x4",
+    "9x16",
+    "16x9"
+  ],
+  "primaryFormat": "3x4",
+  "durationPolicy": "content-led",
+  "narrationRequired": true,
+  "tts": {
+    "provider": "fish",
+    "model": "s2.1-pro-free",
+    "fallbackModels": [
+      "s2.1-pro-free"
+    ],
+    "reference_id": "0f08cacd3e354471a4b94dd00b4cc4a3",
+    "speaker": "曼波（Fish Audio 公开声线）",
+    "params": {
+      "speed": 1.5,
+      "temperature": 0.7,
+      "top_p": 0.7,
+      "volume": 0
+    },
+    "emotion": {
+      "enabled": true,
+      "default": "[excited]"
+    },
+    "style": "短视频快节奏、兴奋、带梗；重音砸在数字和转折词上，句尾不拖",
+    "timestamps": true
+  },
+  "pacing": {
+    "targetCps": 8.0,
+    "toleranceCps": 0.8,
+    "maxVoiceGapSeconds": 0.8,
+    "maxTrailingSilenceSeconds": 2.0,
+    "gapPolicy": {
+      "default": 0.3,
+      "min": 0.12,
+      "max": 0.8,
+      "byPunctuation": {
+        "。": 0.3,
+        "？": 0.4,
+        "！": 0.4,
+        "…": 0.5,
+        "，": 0.2
+      },
+      "byBeatKind": {
+        "hook": 0.25,
+        "turn": 0.5,
+        "chapter": 0.6,
+        "summary": 0.45,
+        "cta": 0.5,
+        "ending": 0.6
+      }
+    },
+    "visualChangeMaxSeconds": 1.5,
+    "enforce": true
+  },
+  "voiceEdit": {
+    "enabled": true,
+    "version": 1,
+    "silenceThresholdDb": -38,
+    "minSilenceSeconds": 0.16,
+    "leadKeepSeconds": 0.05,
+    "tailKeepSeconds": 0.1,
+    "maxInternalPauseSeconds": 0.3,
+    "keepInternalPauseSeconds": 0.18,
+    "jointFadeMs": 2,
+    "edgeFadeMs": 4,
+    "loudness": {
+      "I": -15,
+      "TP": -1.5,
+      "LRA": 7
+    }
+  },
+  "captions": {
+    "style": "karaoke",
+    "maxChars": 16,
+    "maxWeightedChars": 14
+  },
+  "effects": {
+    "preset": "impact",
+    "budget": {
+      "slam": 6,
+      "flash": 6,
+      "hitStop": 4,
+      "stamp": 5
+    }
+  },
+  "music": {
+    "required": true,
+    "gain": 0.55,
+    "duck": 0.45,
+    "hitToleranceFrames": 2,
+    "archetype": null,
+    "candidates": 3,
+    "deliverDryVoice": true
+  },
+  "cover": {
+    "provider": "grok",
+    "titleInImage": true,
+    "candidates": 4,
+    "ratios": [
+      "3x4",
+      "9x16",
+      "16x9"
+    ]
+  },
+  "generation": {
+    "provider": "grok-cli",
+    "quality": "quality-first"
+  },
+  "review": {
+    "script": true,
+    "openingSeconds": 10
+  }
+}

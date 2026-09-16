@@ -1,0 +1,53 @@
+# 播音腔 / hype words that fail lint rule L-BANNED when they appear in any beat's narration.
+# One word per line; text after # is a comment. The lint does a plain substring match, so keep
+# entries specific enough not to hit normal speech (e.g. do not add 全面, 直接, 强).
+# v1 rejected by the user (spoken aloud; fine as on-screen text):
+登场
+震撼
+新一代智能已经到来
+# trailer / 播音腔 vocabulary
+重磅
+颠覆
+颠覆性
+史诗级
+王炸
+炸裂
+见证历史
+划时代
+里程碑
+横空出世
+强势来袭
+隆重
+震惊
+燃爆
+降维打击
+遥遥领先
+开启新纪元
+新纪元
+引领未来
+赋能
+惊艳
+全面碾压
+秒杀全场
+不容错过
+必看
+敬请期待
+拭目以待
+盛大
+闪亮
+巅峰之作
+王者归来
+神级
+屠榜
+封神
+逆天
+恐怖如斯
+黑科技
+重新定义
+改变世界
+未来已来
+千呼万唤
+横扫
+一骑绝尘
+所向披靡
+势不可挡

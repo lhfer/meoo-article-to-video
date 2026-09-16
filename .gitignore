@@ -1,0 +1,15 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+config.env
+assets/director/out/
+assets/director/work/
+dist/
+.claude/
+
+.pytest_cache/
+
+.env.*
+!.env.example
