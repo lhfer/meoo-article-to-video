@@ -1,0 +1,44 @@
+name: Build Meoo README artwork
+on:
+  push:
+    branches: [design/meoo-brand-v2]
+    paths: ['docs/branding/**', '.github/workflows/meoo-brand-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  artwork:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+          python -m pip install Pillow==11.3.0
+      - name: Verify source assets
+        run: python docs/branding/prepare.py
+      - name: Render artwork
+        run: |
+          if [ -f docs/branding/render.py ]; then
+            python docs/branding/render.py --profile article --assets docs/branding/source --output docs/media/brand-v2
+          fi
+      - name: Commit generated assets to design branch only
+        if: github.ref == 'refs/heads/design/meoo-brand-v2'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/branding/source docs/media
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs: render verified Meoo brand assets'
+            git push origin HEAD:design/meoo-brand-v2
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: meoo-brand-review
+          path: |
+            docs/branding
+            docs/media
+          retention-days: 7
