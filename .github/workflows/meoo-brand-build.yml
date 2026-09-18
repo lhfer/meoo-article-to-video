@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: meoo-brand-design
+  cancel-in-progress: false
 jobs:
   artwork:
     runs-on: ubuntu-24.04
@@ -17,25 +20,21 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk
           python -m pip install Pillow==11.3.0
-      - name: Verify source assets
-        run: python docs/branding/prepare.py
-      - name: Render artwork
+      - name: Render both visual identities from verified local assets
         run: |
-          if [ -f docs/branding/render.py ]; then
-            python docs/branding/render.py --profile article --assets docs/branding/source --output docs/media/brand-v2
-          fi
-      - name: Commit generated assets to design branch only
+          python docs/branding/render.py --profile article --assets docs/branding/source --output docs/media/brand-v2
+          python docs/branding/render.py --profile vibecoding --assets docs/branding/source --output docs/media/brand-v2-vibecoding
+      - name: Commit generated artwork to design branch only
         if: github.ref == 'refs/heads/design/meoo-brand-v2'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/branding/source docs/media
+          git add docs/media/brand-v2 docs/media/brand-v2-vibecoding
           if ! git diff --cached --quiet; then
-            git commit -m 'docs: render verified Meoo brand assets'
+            git commit -m 'docs: render both Meoo co-created visual identities'
             git push origin HEAD:design/meoo-brand-v2
           fi
-      - uses: actions/upload-artifact@v4
-        if: always()
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: meoo-brand-review
           path: |
