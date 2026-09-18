@@ -1,0 +1,45 @@
+{
+  "profile": "article",
+  "files": [
+    {
+      "path": "case-mobile.png",
+      "bytes": 43885,
+      "sha256": "a652abce157bb6dc15f13dbfade354b511d8c08979b0e1df3da8760572d41f3f"
+    },
+    {
+      "path": "case.png",
+      "bytes": 57837,
+      "sha256": "b1f9fc8a14aeba0dac2fdd96548c498440e93be0b9f8dce96dee0c1e74863bf7"
+    },
+    {
+      "path": "family-mobile.png",
+      "bytes": 27064,
+      "sha256": "cd11c9263cf99dc54239181b04bf6a6f9cf33231951abf9c9d7ff34153f62ada"
+    },
+    {
+      "path": "family.png",
+      "bytes": 34108,
+      "sha256": "dc746338a1b437aa47e836939f3ef517c8c88c7aaa4517406557fdf8a8582930"
+    },
+    {
+      "path": "hero-mobile.png",
+      "bytes": 343844,
+      "sha256": "341102d2b0a859f4755d1bfff93f9f1173d2d8bf7720b0b18bc31e3fe775d3d1"
+    },
+    {
+      "path": "hero.png",
+      "bytes": 452096,
+      "sha256": "66548c6d079d364da608c1ac2a09016284df5d07b9a62d4c6f7d4fc01793a4ed"
+    },
+    {
+      "path": "workflow-mobile.png",
+      "bytes": 68484,
+      "sha256": "fa32bf3d24796613515aa9ed8aa9f02787d61e896f9c123d1a48c35b4a569cbf"
+    },
+    {
+      "path": "workflow.png",
+      "bytes": 52376,
+      "sha256": "e0b448cb7f367663713b0635354612133ce05dd7823464a584e8e7497c0055a9"
+    }
+  ]
+}

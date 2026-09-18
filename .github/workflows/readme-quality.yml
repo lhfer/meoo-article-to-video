@@ -1,0 +1,33 @@
+name: README visual quality
+on:
+  push:
+    branches: [main]
+    paths: ['README.md', 'docs/**', 'BRAND_ASSETS.md', 'scripts/check-readme.py', '.github/workflows/readme-quality.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check local references and decode brand assets
+        run: |
+          python -m pip install Pillow==11.3.0
+          python scripts/check-readme.py
+      - name: Prepare browser
+        continue-on-error: true
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Capture hosted GitHub README
+        continue-on-error: true
+        run: python docs/branding/hosted-preview.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: readme-browser-review
+          path: readme-preview
+          if-no-files-found: warn
+          retention-days: 7
